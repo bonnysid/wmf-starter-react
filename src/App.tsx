@@ -1,8 +1,21 @@
-import React, { FC } from "react";
-import { render } from "react-dom";
+import React, { FC } from 'react';
+import { ReactComponent as Icon } from '@assets/SettingsGeneral.svg';
+import { render } from 'react-dom';
 
-import "./index.css";
+import styles from './index.module.scss';
 
-const App: FC = () => <div>Hi there, I'm React from Webpack 5.</div>;
+const App: FC = () => {
+  return (
+    <div className={styles.container}>
+      <Icon />
+      Hi there, I'm React from Webpack 5.
+    </div>
+  );
+}
 
-render(<App />, document.getElementById("root") as HTMLDivElement);
+render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root") as HTMLDivElement,
+);
